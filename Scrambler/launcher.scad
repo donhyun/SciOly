@@ -68,9 +68,9 @@ module rodholder(){
 
 module rodholder2(){
     difference(){
-        cylinder(50, 4, 4);
+        cylinder(50, 20, 20);
         translate([0,0,5]){
-            cylinder(50, 3, 3, $fn=100);
+            cylinder(50, 17.5, 17.5, $fn=100);
         }
     }
 }
