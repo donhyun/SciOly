@@ -11,6 +11,8 @@
 wheel1();
 hub();
 
+
+
 for ( i = [1:1:6]) {
     rotate([i*60, 0,0]){
         translate([0,7,-2]){
@@ -23,6 +25,18 @@ for ( i = [1:1:6]) {
 module wheel1(){
     rotate([0,90,0]){
         difference(){
+            cylinder(1,61,61, $fn=1000);
+            cylinder(1,58,58);
+        }
+        
+        translate([0,0,7]){
+            difference(){
+                cylinder(1,61,61, $fn=1000);
+                cylinder(1,58,58);
+            }
+        }
+        
+        difference(){
             cylinder(8,60,60, $fn=1000);
             translate([0,0,-5]){
                 cylinder(20,35,35, $fn=1000);
@@ -32,7 +46,7 @@ module wheel1(){
                 rotate([0,0,i*30]){
                     $fn=6;
                     translate([0,47,-5]){
-                        cylinder(20,8,8);
+                        cylinder(20,6.4,6.4);
                         }
                     
                 }
@@ -48,7 +62,7 @@ module hub(){
             cylinder(8,12,12);
             translate([0,0,-5]){
                 
-                cylinder(20,7,7);
+                cylinder(20,7.25,7.25);
             }
         }
     }
