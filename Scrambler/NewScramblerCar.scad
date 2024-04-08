@@ -2,7 +2,7 @@
 //      Connector between car parts
 
 
-//ScramblerFrontComplete();
+ScramblerFrontComplete();
 
 module ScramblerFrontComplete(){
     ScramblerFrontBoard();
