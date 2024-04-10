@@ -1,56 +1,58 @@
-/*
+
 difference(){
-    cylinder(50,14,14, $fn=100);
+    cylinder(20,30,30, $fn=100);
     cylinder(60,3.9,3.9,$fn=100);
     cylinder(10,7.25,7.25, $fn=6);
     
-    translate([-2.5,10,0]){
+    translate([-2.5,25,0]){
         cube([5,5,5]);    
         
     }
     
-    translate([0,25,25]){
+    translate([0,35,10]){
     rotate([90,0,0]){
-        cylinder(50,2,2, $fn=100);
+        cylinder(70,2,2, $fn=100);
         }
     }
-    translate([10,25,25]){
+    translate([10,35,10]){
     rotate([90,0,0]){
-        cylinder(50,2,2, $fn=100);
+        cylinder(70,2,2, $fn=100);
         }
     }
 }
-*/
-/*
+
+
 difference(){
-    cylinder(5, 20, 14, $fn=100); 
-    cylinder(10,14,14, $fn=100);
+    cylinder(5, 35, 30, $fn=100); 
+    cylinder(10,30,30, $fn=100);
 
 }
-*/
 
-/*
+
+translate([0,0,5]){
+    cylinder(3, 35, 30);
+    }
 difference(){
-    cylinder(5, 25, 25, $fn=100); 
-    cylinder(10,14,14, $fn=100);
+    cylinder(5, 35, 35, $fn=100); 
+    cylinder(10,30,30, $fn=100);
     
 }
-translate([-2.5,10,0]){
+translate([-2.5,25,0]){
         cube([5,5,5]);    
         
     }
 
-for ( i = [1:1:20]) {
-    rotate([0, 0,i*360/20]){
-        translate([0,20,0]){
+for ( i = [1:1:30]) {
+    rotate([0, 0,i*360/30]){
+        translate([0,30,0]){
             rotate([0,0,5]){
                 cube([8, 6, 5]);
             }
         }
     }
 }
-*/
 
+/*
 difference(){
     ratchet();
     translate([10,3,0]){
@@ -69,3 +71,4 @@ module ratchet(){
     }
 
 }
+*/

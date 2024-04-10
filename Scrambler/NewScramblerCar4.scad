@@ -2,15 +2,10 @@
 //      Connector between car parts
 
 
-ScramblerFrontComplete();
-
-module ScramblerFrontComplete(){
-    ScramblerFrontBoard();
-
-}
+ScramblerFrontBoard();
 
 
-ScramblerBackBoard();
+//ScramblerBackBoard();
 
 module  ScramblerBackBoard(){
     
@@ -37,12 +32,12 @@ module ScramblerFront()
     
     difference()
     {   
-        translate([0,0.5,0]){
-        cube([85,114.5,34]);
+        translate([0,0.5,1]){
+        cube([85,114,34]);
         }
         
-        translate([10,10,-2])
-        cube(95,90,155);
+        translate([10,9.5,-2])
+        cube(96,90,155);
         
         translate([-15,00,15]){
             rotate([0,50,0]){
@@ -53,15 +48,15 @@ module ScramblerFront()
         
         translate([55,11,18])
         rotate([90,0,0])
-        cylinder(15,11.05,11.05);
+        cylinder(15,11.05,11.05,$fn=100);
         translate([55,116,18])
         rotate([90,0,0])
-        cylinder(16,11.05,11.05);
+        cylinder(16,11.05,11.05, $fn=100);
     }
     
     difference()
     {
-        translate([55,10,18])
+        translate([55,9.5,18])
         rotate([90,0,0])
         cylinder(2,12,12);
         
@@ -69,11 +64,11 @@ module ScramblerFront()
         rotate([90,0,0])
         cylinder(9,9.5,9.5);
     }
-    translate([0,97,0])
+    translate([0,98,0])
     {
     difference()
     {
-        translate([55,10,18])
+        translate([55,9.5,18])
         rotate([90,0,0])
         cylinder(2,12,12);
         
