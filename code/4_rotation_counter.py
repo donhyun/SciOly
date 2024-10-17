@@ -32,6 +32,7 @@ try:
             old_state = encoder.value()
             lcd.clear()
             lcd.putstr("counter:" + str(counter))
+            print("counter" + str(counter))
 
 
 except KeyboardInterrupt:

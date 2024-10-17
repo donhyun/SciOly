@@ -1,7 +1,7 @@
 from machine import Pin
 from time import sleep
 
-encoder = Pin(14, Pin.IN, Pin.PULL_UP)
+encoder = Pin(15, Pin.IN, Pin.PULL_UP)
 led = Pin('LED', Pin.OUT)
 
 while True:

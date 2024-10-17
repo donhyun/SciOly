@@ -21,7 +21,7 @@ pwm.freq(50)
 led = Pin('LED', Pin.OUT)
 lcd.clear()
 
-
+#forward
 In1.value(1)
 In2.value(0)
 
