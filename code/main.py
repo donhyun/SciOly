@@ -32,8 +32,8 @@ lcd.putstr("ready!")
 
 
 def move_car():
-    In1.value(1)
-    In2.value(0)
+    In1.value(0)
+    In2.value(1)
     lcd.clear()
     lcd.putstr("start:")
     sleep(1)
@@ -46,18 +46,28 @@ def move_car():
     print("encoder.value():" + str(encoder.value()))
     pwm.duty_u16(32000)
     
-    while counter < 20:
+    while counter < 10:
         if encoder.value() != old_state:
                 print("state change")
                 counter = counter +1
                 old_state = encoder.value()
                 lcd.clear()
                 lcd.putstr("counter:" + str(counter))
+
     lcd.putstr("finish:")
+    pwm.deinit()
+    In1.value(1)
+    In2.value(0)
+    pwm.duty_u16(32000)
+    sleep(.2)
+
+    lcd.clear()
+    lcd.putstr("done")
     pwm.deinit()
     In1.value(0)
     In2.value(0)
-
+    pwm.duty_u16(32000)
+    pwm.deinit()
 
 try:
     while True:
