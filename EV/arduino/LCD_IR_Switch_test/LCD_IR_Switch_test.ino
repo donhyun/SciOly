@@ -16,8 +16,9 @@
 LiquidCrystal_I2C lcd(0x27,  16, 2);
 
 int counter = 0;
-int status1 = 0;
+int lastSensorRead = 0;
 int val = 0;
+bool sw1 = 0;
 
 void setup() {
   
@@ -25,15 +26,20 @@ void setup() {
   lcd.init();
   // turn on the backlight
   lcd.backlight();
+
+  pinMode(2, INPUT);
 }
 void loop() {
   val = analogRead(A0);
-
+  sw1 = digitalRead(2);
+  String strVal = String(val);
+  //Serial.println("val:" + strVal);
     if (val >= 50)
     {
-      if (status1==0){
+      if (lastSensorRead==0){
+        Serial.println("valhigh:" + strVal);
         digitalWrite(LED_BUILTIN, HIGH);
-        status1 = 1;
+        lastSensorRead = 1;
         counter+=1;
         String strCounter = String(counter);
         lcd.clear();
@@ -42,15 +48,19 @@ void loop() {
     }
     else
     {
-      if (status1==1){
+      if (lastSensorRead==1){
+        Serial.println("vallow:" + strVal);
         digitalWrite(LED_BUILTIN, LOW);
-        status1 = 0;
+        lastSensorRead = 0;
         counter+=1;
         String strCounter = String(counter);
         lcd.clear();
         lcd.print("counter:" + strCounter );
+        
       }
     }
+    lcd.setCursor(0,1);
+    lcd.print(sw1);
 
 
 }
